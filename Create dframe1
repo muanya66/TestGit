@@ -1,0 +1,9 @@
+import os
+import pandas as pd
+
+#list the files
+filelist = os.listdir(targetdir) 
+#read them into pandas
+df_list = [pd.read_table(file) for file in filelist]
+#concatenate them together
+big_df = pd.concat(df_list)
